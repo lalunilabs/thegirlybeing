@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girly Being — A Love Letter to Womanhood</title>
+<meta name="description" content="Sophisticated personal growth and psychology for ambitious women. Your body, your cycles, your hormones, your power.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#FFF5F8;--paper:#FFFCF8;--pink:#F5C8D4;--rose:#C96480;--rose2:#E8849A;--blush:#FAE4EC;--lilac:#E0D0F0;--mint:#C8E8D8;--butter:#F8EAC0;--peach:#F8D4BC;--plum:#5A2E4A;--deep:#2E1422;--muted:#9A7882;--light:#C4A8B4;--border:rgba(90,46,74,.08);--grad:linear-gradient(135deg,#E8849A,#C96480);--gcheck:rgba(245,200,210,.14)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--deep);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--gcheck) 1px,transparent 1px),linear-gradient(90deg,var(--gcheck) 1px,transparent 1px);background-size:36px 36px;opacity:.5}
+
+nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:16px 60px;background:rgba(253,246,241,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .3s}
+nav.scrolled{padding:11px 60px;box-shadow:0 2px 20px rgba(90,46,74,.05)}
+.logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--plum);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo em{font-style:italic;font-weight:400;color:var(--rose)}
+.logo-flower{font-size:.8rem;color:var(--rose);animation:spin 16s linear infinite;display:inline-block}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--rose)}
+.nav-cta{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.5px;text-decoration:none;color:var(--plum);border:1.5px solid rgba(90,46,74,.18);padding:9px 22px;border-radius:40px;transition:background .2s,border-color .2s}
+.nav-cta:hover{background:var(--blush);border-color:var(--rose)}
+
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 80px;overflow:hidden}
+.hero-flower{position:absolute;font-size:40vw;color:rgba(242,194,206,.1);pointer-events:none;animation:spin 70s linear infinite;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1;user-select:none}
+.h-eyebrow{font-family:'Caveat',cursive;font-size:1.2rem;font-weight:600;color:var(--rose);margin-bottom:20px;opacity:0;animation:fadeUp .6s .1s forwards;display:flex;align-items:center;gap:12px}
+.h-eyebrow::before,.h-eyebrow::after{content:'✦';font-size:.7rem;color:var(--pink)}
+.h1{font-family:'Playfair Display',serif;font-size:clamp(3.6rem,8vw,7.5rem);font-weight:900;line-height:1.0;color:var(--deep);letter-spacing:-.02em;max-width:900px;opacity:0;animation:fadeUp .8s .22s forwards;margin-bottom:28px;position:relative;z-index:1}
+.h1 em{font-style:italic;color:var(--rose);font-weight:400}
+.h1 .line2{display:block;font-weight:400;font-style:italic;color:var(--muted);font-size:.7em;margin-top:4px;letter-spacing:.01em}
+.h-sub{font-size:1.08rem;line-height:1.86;color:var(--muted);font-weight:300;max-width:520px;opacity:0;animation:fadeUp .7s .38s forwards;margin-bottom:48px;position:relative;z-index:1}
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:fadeUp .7s .52s forwards;position:relative;z-index:1}
+.cta-big{display:inline-flex;align-items:center;gap:12px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.4px;text-decoration:none;color:#fff;background:var(--grad);padding:18px 48px;border-radius:14px;box-shadow:0 10px 32px rgba(201,100,128,.3);transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.cta-big:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 48px rgba(201,100,128,.38)}
+.cta-arrow{transition:transform .3s}
+.cta-big:hover .cta-arrow{transform:translateX(5px)}
+.cta-micro{font-family:'Caveat',cursive;font-size:1rem;color:var(--light);font-weight:400;display:flex;align-items:center;gap:8px}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .6s 1.1s forwards;z-index:1}
+.scroll-line{width:1px;height:48px;background:linear-gradient(var(--rose),transparent);animation:pulse 2s ease-in-out infinite}
+.scroll-txt{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--light)}
+
+.proof-bar{position:relative;z-index:1;background:var(--plum);display:flex;justify-content:center;align-items:center;gap:48px;padding:22px 60px;flex-wrap:wrap}
+.proof-item{display:flex;flex-direction:column;align-items:center;gap:3px}
+.proof-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#fff}
+.proof-label{font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.proof-div{width:1px;height:36px;background:rgba(255,255,255,.12)}
+
+.articles{position:relative;z-index:1;padding:100px 60px 80px}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+.sec-label{font-family:'Quicksand',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:900;line-height:1.1;color:var(--deep)}
+.sec-h2 em{font-style:italic;color:var(--rose);font-weight:400}
+.see-all{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.see-all::after{content:'→';transition:transform .2s}
+.see-all:hover{color:var(--rose)}.see-all:hover::after{transform:translateX(4px)}
+
+.articles-grid{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:18px}
+.article-hero-card{grid-row:1/3;background:var(--paper);border-radius:6px;overflow:hidden;border:1px solid rgba(201,100,128,.1);box-shadow:2px 4px 20px rgba(90,46,74,.07);text-decoration:none;color:var(--deep);display:flex;flex-direction:column;transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .32s;position:relative}
+.article-hero-card::before{content:'';position:absolute;top:-8px;left:38px;width:52px;height:18px;background:rgba(249,220,180,.75);border-radius:3px;z-index:2}
+.article-hero-card:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:4px 12px 40px rgba(90,46,74,.11)}
+.ahc-img{width:100%;aspect-ratio:16/9;background:linear-gradient(140deg,var(--pink) 0%,var(--blush) 45%,var(--peach) 100%);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden}
+.ahc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(255,255,255,.4))}
+.ahc-body{padding:32px 30px 30px;flex:1;display:flex;flex-direction:column}
+.a-cat{font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.a-cat::before{content:'';width:18px;height:1.5px;background:var(--rose);display:inline-block}
+.ahc-title{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;line-height:1.18;color:var(--deep);margin-bottom:14px}
+.ahc-excerpt{font-size:.91rem;line-height:1.82;color:var(--muted);font-weight:300;margin-bottom:24px;flex:1}
+.a-meta{display:flex;align-items:center;gap:14px;font-family:'Quicksand',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light)}
+.a-read-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.5px;color:var(--rose);margin-top:20px;transition:gap .2s;text-decoration:none}
+.a-read-btn::after{content:'→';transition:transform .2s}
+.article-hero-card:hover .a-read-btn::after{transform:translateX(5px)}
+
+.article-side-card{background:var(--paper);border-radius:6px;border:1px solid rgba(201,100,128,.1);box-shadow:2px 3px 14px rgba(90,46,74,.06);text-decoration:none;color:var(--deep);display:flex;gap:0;overflow:hidden;transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s}
+.article-side-card:hover{transform:translateX(6px) rotate(.2deg);box-shadow:4px 8px 24px rgba(90,46,74,.1)}
+.asc-color{width:7px;flex-shrink:0}
+.asc-body{padding:22px 22px 20px;display:flex;flex-direction:column;justify-content:space-between;flex:1}
+.asc-title{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;line-height:1.3;color:var(--deep);margin-bottom:8px}
+.asc-excerpt{font-size:.82rem;line-height:1.7;color:var(--muted);font-weight:300;margin-bottom:12px}
+.asc-meta{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--light)}
+
+.topic-strip{position:relative;z-index:1;background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 60px;display:flex;gap:10px;align-items:stretch;overflow-x:auto}
+.topic-chip{flex-shrink:0;padding:14px 22px;border-radius:6px;border:1px solid rgba(201,100,128,.12);font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;font-weight:700;color:var(--deep);text-decoration:none;display:flex;align-items:center;gap:10px;transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s,background .2s;white-space:nowrap;background:var(--paper);box-shadow:1px 2px 8px rgba(90,46,74,.05)}
+.topic-chip:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:2px 8px 20px rgba(90,46,74,.09);background:var(--blush)}
+.tc-em{font-style:normal;font-size:1.2rem}
+
+.more-articles{position:relative;z-index:1;padding:80px 60px}
+.articles-list{display:flex;flex-direction:column;gap:1px}
+.article-row{display:flex;align-items:center;gap:24px;padding:26px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--deep);transition:padding-left .25s}
+.article-row:first-child{border-top:1px solid var(--border)}
+.article-row:hover{padding-left:12px}
+.ar-num{font-family:'Caveat',cursive;font-size:2rem;font-weight:700;color:var(--pink);min-width:42px;line-height:1;transition:color .2s}
+.article-row:hover .ar-num{color:var(--rose)}
+.ar-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ar-body{flex:1}
+.ar-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--deep);margin-bottom:5px;line-height:1.3}
+.ar-excerpt{font-size:.84rem;line-height:1.7;color:var(--muted);font-weight:300}
+.ar-meta{font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--light);white-space:nowrap;text-align:right;flex-shrink:0}
+.ar-arrow{font-size:1.1rem;color:var(--pink);flex-shrink:0;transition:transform .2s,color .2s}
+.article-row:hover .ar-arrow{transform:translateX(6px);color:var(--rose)}
+
+.testimonials{position:relative;z-index:1;background:var(--plum);padding:90px 60px;overflow:hidden}
+.testimonials::before{content:'✿';position:absolute;font-size:26rem;right:-80px;top:-60px;color:rgba(255,255,255,.04);pointer-events:none;line-height:1;animation:spin 60s linear infinite}
+.t-header{text-align:center;margin-bottom:56px}
+.t-header .sec-h2{color:#fff}
+.t-header .sec-label{color:rgba(245,180,200,.8)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:28px 26px;position:relative;transition:transform .28s cubic-bezier(.34,1.56,.64,1),background .2s}
+.tcard::before{content:'';position:absolute;top:-8px;left:24px;width:40px;height:14px;background:rgba(249,220,180,.5);border-radius:3px}
+.tcard:hover{transform:translateY(-4px) rotate(-.3deg);background:rgba(255,255,255,.11)}
+.tquote{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;line-height:1.72;color:rgba(255,255,255,.88);margin-bottom:20px}
+.tauthor{font-family:'Quicksand',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,180,200,.75)}
+
+.nl-section{position:relative;z-index:1;padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.nl-left .sec-h2{margin-bottom:20px}
+.nl-left p{font-size:.97rem;line-height:1.86;color:var(--muted);font-weight:300;margin-bottom:14px}
+.nl-left p strong{color:var(--plum);font-weight:500}
+.nl-form-wrap{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.nl-input{padding:15px 20px;border-radius:10px;border:1.5px solid rgba(201,100,128,.2);background:var(--paper);font-family:'DM Sans',sans-serif;font-size:.92rem;color:var(--deep);outline:none;transition:border-color .2s,box-shadow .2s}
+.nl-input:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,100,128,.08)}
+.nl-btn{padding:16px;border-radius:10px;border:none;cursor:pointer;background:var(--grad);color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.3px;box-shadow:0 6px 22px rgba(201,100,128,.25);transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s}
+.nl-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,100,128,.35)}
+.nl-note{font-size:.75rem;color:var(--light);font-weight:300;text-align:center}
+
+.nl-collage{position:relative;height:380px}
+.nc-card{position:absolute;background:var(--paper);border-radius:4px;border:1px solid rgba(201,100,128,.1);box-shadow:3px 5px 18px rgba(90,46,74,.09);padding:18px 16px;font-family:'Playfair Display',serif}
+.nc-card::before{content:'';position:absolute;width:44px;height:14px;background:rgba(249,220,180,.7);border-radius:3px}
+.nc1{width:190px;top:20px;left:10px;transform:rotate(-3deg)}.nc1::before{top:-7px;left:22px}
+.nc2{width:175px;top:10px;right:20px;transform:rotate(2.5deg)}.nc2::before{top:-7px;left:18px}
+.nc3{width:200px;bottom:40px;left:0;transform:rotate(1.5deg)}.nc3::before{top:-7px;left:26px}
+.nc4{width:170px;bottom:20px;right:10px;transform:rotate(-2deg)}.nc4::before{top:-7px;left:20px}
+.nc-em{font-size:1.8rem;display:block;margin-bottom:10px}
+.nc-txt{font-style:italic;font-size:.9rem;line-height:1.6;color:var(--plum);font-weight:700}
+.nc-sub{font-family:'DM Sans',sans-serif;font-size:.73rem;color:var(--muted);font-weight:300;margin-top:6px;font-style:normal}
+
+.circle-teaser{position:relative;z-index:1;margin:0 60px 100px;background:linear-gradient(128deg,var(--plum) 0%,#7A3062 100%);border-radius:6px;padding:56px 68px;display:flex;justify-content:space-between;align-items:center;gap:48px;overflow:hidden;box-shadow:4px 8px 40px rgba(90,46,74,.2)}
+.circle-teaser::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.circle-teaser::after{content:'✿';position:absolute;font-size:20rem;right:-60px;bottom:-60px;color:rgba(255,255,255,.05);line-height:1;animation:spin 50s linear infinite;pointer-events:none}
+.ct-left{position:relative;z-index:1}
+.ct-tag{font-family:'Quicksand',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(245,180,200,.8);margin-bottom:14px}
+.ct-h{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:14px}
+.ct-h em{font-style:italic;font-weight:400;color:var(--pink)}
+.ct-p{font-size:.92rem;line-height:1.78;color:rgba(255,255,255,.62);font-weight:300;max-width:480px}
+.ct-right{position:relative;z-index:1;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.ct-price{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:#fff;line-height:1;text-align:center}
+.ct-price span{font-size:.9rem;font-family:'DM Sans',sans-serif;font-weight:300;color:rgba(255,255,255,.5);display:block;margin-top:4px}
+.ct-btn{font-family:'Quicksand',sans-serif;font-weight:700;font-size:.86rem;letter-spacing:.4px;text-decoration:none;color:var(--plum);background:#fff;padding:15px 36px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.12);transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s}
+.ct-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.ct-micro{font-family:'Caveat',cursive;font-size:.95rem;color:rgba(255,255,255,.4)}
+
+footer{position:relative;z-index:1;padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.fl{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--plum)}
+.fl em{font-style:italic;font-weight:400;color:var(--rose)}
+.fs{font-size:.72rem;color:var(--light);margin-top:3px;font-weight:300}
+.flinks{display:flex;gap:22px}
+.flinks a{font-family:'Quicksand',sans-serif;font-size:.69rem;font-weight:600;letter-spacing:.5px;text-decoration:none;color:var(--muted);transition:color .2s}
+.flinks a:hover{color:var(--rose)}
+.f-social{display:flex;gap:10px}
+.fsoc-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;border:1px solid var(--border);background:var(--paper);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.fsoc-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(90,46,74,.1)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.07s}.d2{transition-delay:.15s}.d3{transition-delay:.23s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+@media(max-width:1024px){
+.articles-grid{grid-template-columns:1fr;grid-template-rows:auto}
+.article-hero-card{grid-row:auto}
+.nl-section{grid-template-columns:1fr;gap:40px}
+.nl-collage{height:300px}
+.tgrid{grid-template-columns:1fr}
+.circle-teaser{flex-direction:column;text-align:center;padding:40px}
+.ct-left{display:flex;flex-direction:column;align-items:center}
+}
+@media(max-width:768px){
+nav{padding:16px 20px}
+nav.scrolled{padding:11px 20px}
+.nav-links{display:none}
+.articles,.more-articles,.nl-section,.testimonials{padding:60px 20px}
+.topic-strip{padding:30px 20px}
+.circle-teaser{margin:0 20px 60px;padding:40px 30px}
+footer{padding:30px 20px;flex-direction:column;text-align:center}
+.h1{font-size:clamp(2.5rem,10vw,4rem)}
+.proof-bar{gap:24px;padding:20px}
+.proof-div{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo"><span class="logo-flower">✿</span> Girly <em>&nbsp;Being</em></a>
+  <ul class="nav-links">
+    <li><a href="all-articles.html">Articles</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#circle">Inner Circle</a></li>
+  </ul>
+  <a href="#newsletter" class="nav-cta">Subscribe Free</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-flower">✿</div>
+  <div class="h-eyebrow">a love letter to womanhood</div>
+  <h1 class="h1">Everything<br><em>she needed to know</em><span class="line2">about being a woman</span></h1>
+  <p class="h-sub">Your body, your cycles, your hormones, your power. Written warmly — for the woman who wants to understand herself, deeply.</p>
+  <div class="hero-cta-wrap">
+    <a href="#articles" class="cta-big">Start Reading <span class="cta-arrow">→</span></a>
+    <span class="cta-micro">free · no sign-up needed ✿</span>
+  </div>
+  <div class="scroll-hint">
+    <span class="scroll-txt">scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="proof-bar">
+  <div class="proof-item"><span class="proof-num" id="reader-count">25,000+</span><span class="proof-label">Readers</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-num" id="article-count">13</span><span class="proof-label">Articles</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-num">It's a Girl Thing</span><span class="proof-label">Newsletter</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-num">Always</span><span class="proof-label">For You</span></div>
+</div>
+
+<section class="articles" id="articles">
+  <div class="section-header reveal">
+    <div><p class="sec-label">✦ Start Here</p><h2 class="sec-h2">Our best <em>work,</em> for you.</h2></div>
+    <a href="#more" class="see-all">All Articles</a>
+  </div>
+  <div class="articles-grid reveal d1">
+    <!-- Hero Article -->
+    <a href="post-the-art-of-seeing-without-drowning.html" class="article-hero-card">
+      <div class="ahc-img">🌙</div>
+      <div class="ahc-body">
+        <span class="a-cat">Mind Mechanics</span>
+        <h2 class="ahc-title">The Art of Seeing Without Drowning</h2>
+        <p class="ahc-excerpt">You can feel everything deeply AND see clearly. Learn the art of emotional detachment without abandoning your feelings—holding space for both emotion and clarity.</p>
+        <div class="a-meta"><span>15 min read</span><span>·</span><span>Latest</span></div>
+        <span class="a-read-btn">Read the article</span>
+      </div>
+    </a>
+    <!-- Side Article 1 -->
+    <a href="post-when-silence-becomes-violence.html" class="article-side-card">
+      <div class="asc-color" style="background:var(--lilac)"></div>
+      <div class="asc-body">
+        <div>
+          <span class="a-cat" style="font-size:.58rem;margin-bottom:8px">The Becoming</span>
+          <h3 class="asc-title">When Silence Becomes Violence</h3>
+          <p class="asc-excerpt">Your silence is literally making you sick. Learn how self-silencing destroys your health—and how to find your voice again.</p>
+        </div>
+        <span class="asc-meta">18 min read · Free</span>
+      </div>
+    </a>
+    <!-- Side Article 2 -->
+    <a href="post-show-up-for-yourself.html" class="article-side-card">
+      <div class="asc-color" style="background:var(--mint)"></div>
+      <div class="asc-body">
+        <div>
+          <span class="a-cat" style="font-size:.58rem;margin-bottom:8px">The Becoming</span>
+          <h3 class="asc-title">Girl, Show Up for Yourself</h3>
+          <p class="asc-excerpt">Showing up for yourself is built in tiny daily choices — through the hard, the healing, and the joy.</p>
+        </div>
+        <span class="asc-meta">7 min read · Free</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="topic-strip reveal" id="topics">
+  <a href="#articles" class="topic-chip"><span class="tc-em">🧠</span> Mind Mechanics</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">🏗️</span> Daily Architecture</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">✨</span> Energy Shift</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">🌗</span> Shadow & Light</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">🌱</span> The Becoming</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">🎯</span> The Big Why</a>
+  <a href="#articles" class="topic-chip"><span class="tc-em">💫</span> Grounded & Present</a>
+</div>
+
+<section class="more-articles" id="more">
+  <div class="section-header reveal">
+    <div><p class="sec-label">✦ Keep Reading</p><h2 class="sec-h2">More <em>stories</em> for you.</h2></div>
+  </div>
+  <div class="articles-list">
+    <a href="post-what-do-you-bring-to-the-table.html" class="article-row reveal">
+      <span class="ar-num">01</span>
+      <div class="ar-dot" style="background:var(--pink)"></div>
+      <div class="ar-body"><div class="ar-title">What Do You Bring to the Table?</div><div class="ar-excerpt">Stop proving your worth. Start knowing it — and build a life so full you're not begging for a seat at anyone's table.</div></div>
+      <div class="ar-meta">The Becoming · 12 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-boundaries-arent-where-we-fight.html" class="article-row reveal d1">
+      <span class="ar-num">02</span>
+      <div class="ar-dot" style="background:var(--lilac)"></div>
+      <div class="ar-body"><div class="ar-title">Boundaries Aren't Where We Fight Constantly</div><div class="ar-excerpt">Boundaries aren't battlefields. They're living guidelines that protect your integrity without isolating you.</div></div>
+      <div class="ar-meta">The Becoming · 8 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-waiting-for-happiness.html" class="article-row reveal d2">
+      <span class="ar-num">03</span>
+      <div class="ar-dot" style="background:var(--mint)"></div>
+      <div class="ar-body"><div class="ar-title">Waiting for Happiness? Stop Chasing It and Start Practicing It</div><div class="ar-excerpt">If you keep thinking you'll be happy "when…", you're postponing your life. Here's the psychology behind it.</div></div>
+      <div class="ar-meta">Mind Mechanics · 9 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-manifestation-real.html" class="article-row reveal d3">
+      <span class="ar-num">04</span>
+      <div class="ar-dot" style="background:var(--butter)"></div>
+      <div class="ar-body"><div class="ar-title">Manifestation Is Real. But Not How You Think.</div><div class="ar-excerpt">The science behind the woo-woo, and how to actually make it work in your real life.</div></div>
+      <div class="ar-meta">Energy Shift · 10 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-shadow-power.html" class="article-row reveal d1">
+      <span class="ar-num">05</span>
+      <div class="ar-dot" style="background:var(--peach)"></div>
+      <div class="ar-body"><div class="ar-title">The Parts of You That You Hide Hold Your Power</div><div class="ar-excerpt">What if the very things you're most ashamed of are actually your greatest sources of strength?</div></div>
+      <div class="ar-meta">Shadow & Light · 9 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-building-yourself.html" class="article-row reveal d2">
+      <span class="ar-num">06</span>
+      <div class="ar-dot" style="background:var(--pink)"></div>
+      <div class="ar-body"><div class="ar-title">You're Not Finding Yourself. You're Building Yourself.</div><div class="ar-excerpt">Self-discovery isn't about uncovering something lost. It's about consciously creating who you're becoming.</div></div>
+      <div class="ar-meta">The Becoming · 8 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-body-knows.html" class="article-row reveal d3">
+      <span class="ar-num">07</span>
+      <div class="ar-dot" style="background:var(--lilac)"></div>
+      <div class="ar-body"><div class="ar-title">Your Body Knows Before Your Mind Does</div><div class="ar-excerpt">The somatic signals you've been ignoring are actually your inner guidance system trying to get your attention.</div></div>
+      <div class="ar-meta">Grounded & Present · 9 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+    <a href="post-big-why.html" class="article-row reveal d1">
+      <span class="ar-num">08</span>
+      <div class="ar-dot" style="background:var(--mint)"></div>
+      <div class="ar-body"><div class="ar-title">Purpose Without Pressure</div><div class="ar-excerpt">A grounded way to find direction that doesn't turn your life into a performance.</div></div>
+      <div class="ar-meta">The Big Why · 7 min</div>
+      <span class="ar-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="t-header reveal">
+    <p class="sec-label">✦ What Readers Say</p>
+    <h2 class="sec-h2">They came for one <em>article.</em><br>They stayed for everything.</h2>
+  </div>
+  <div class="tgrid">
+    <div class="tcard reveal d1"><p class="tquote">"I read 'The Art of Seeing Without Drowning' at midnight and cried. I've never felt so understood. I've been sending it to every woman I know."</p><span class="tauthor">Priya, 28 · Mumbai</span></div>
+    <div class="tcard reveal d2"><p class="tquote">"Girly Being is the only content I read every single week without skipping. It makes me feel proud to be a woman."</p><span class="tauthor">Sofia, 31 · Madrid</span></div>
+    <div class="tcard reveal d3"><p class="tquote">"I've never seen psychology explained this beautifully for women. It's deep knowledge but written like it loves you."</p><span class="tauthor">Amara, 26 · Lagos</span></div>
+  </div>
+</section>
+
+<section class="nl-section" id="newsletter">
+  <div class="nl-left reveal">
+    <p class="sec-label">✦ Monthly Newsletter</p>
+    <h2 class="sec-h2">One article. Every month. Free.</h2>
+    <p>Monthly newsletter gets you the month prompts, free journaling prompts, and topics to focus on — maybe for your inner circle too.</p>
+    <p>25,000+ women already get it.</p>
+    <div class="nl-form-wrap">
+      <input class="nl-input" type="email" placeholder="your@email.com">
+      <button class="nl-btn" type="button">Subscribe — it's free ✿</button>
+      <span class="nl-note">Unsubscribe any time. We never share your email.</span>
+    </div>
+  </div>
+  <div class="nl-collage reveal d2">
+    <div class="nc-card nc1"><span class="nc-em">🌿</span><p class="nc-txt">"She who knows her own mind..."</p><p class="nc-sub">This month's essay</p></div>
+    <div class="nc-card nc2"><span class="nc-em">📚</span><p class="nc-txt">Monthly book club selection</p><p class="nc-sub">What we're reading together</p></div>
+    <div class="nc-card nc3"><span class="nc-em">🌸</span><p class="nc-txt">Month's journaling prompts</p><p class="nc-sub">Free writing exercises</p></div>
+    <div class="nc-card nc4"><span class="nc-em">✨</span><p class="nc-txt">The month's big insight</p><p class="nc-sub">Latest article</p></div>
+  </div>
+</section>
+
+<div class="circle-teaser reveal" id="circle">
+  <div class="ct-left">
+    <p class="ct-tag">✦ Inner Circle — when you're ready</p>
+    <h2 class="ct-h">The curated layer.<br><em>For the woman going deeper.</em></h2>
+    <p class="ct-p">Monthly book picks on what world's most extraordinary women are reading. Curated intel on what top women are building and discovering. A deeper monthly newsletter. A private community. Start free — join when it feels right.</p>
+  </div>
+  <div class="ct-right">
+    <div class="ct-price">$11.11<span>per month</span></div>
+    <a href="premium.html" class="ct-btn">Join the Inner Circle</a>
+    <span class="ct-micro">read for free first ✿</span>
+  </div>
+</div>
+
+<footer>
+  <div><div class="fl">Girly <em>Being</em></div><p class="fs">A love letter to womanhood.</p></div>
+  <div class="flinks">
+    <a href="#articles">Read</a>
+    <a href="#topics">Topics</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#circle">Inner Circle</a>
+  </div>
+  <div class="f-social">
+    <a href="#" class="fsoc-btn" title="Instagram"><i class="fab fa-instagram" style="color:var(--rose)"></i></a>
+    <a href="#" class="fsoc-btn" title="Pinterest"><i class="fab fa-pinterest" style="color:var(--rose)"></i></a>
+  </div>
+</footer>
+
+<script>
+// Navigation scroll effect
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+// Intersection Observer for reveal animations
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Active nav link on scroll
+const secs=document.querySelectorAll('section[id],div[id]'),nls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)c=s.id});nls.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+c)a.classList.add('active')})},{passive:true});
+
+// Newsletter form
+const nlBtn=document.querySelector('.nl-btn');
+const nlInput=document.querySelector('.nl-input');
+if(nlBtn&&nlInput){
+  nlBtn.addEventListener('click',function(){
+    const email=nlInput.value.trim();
+    if(email&&email.includes('@')){
+      this.textContent='Subscribed! ✿';
+      this.style.background='linear-gradient(135deg,#27AE60,#2ECC71)';
+      nlInput.value='';
+      setTimeout(()=>{this.textContent='Subscribe — it\'s free ✿';this.style.background=''},3000);
+    }else{
+      nlInput.style.borderColor='#E74C3C';
+      setTimeout(()=>nlInput.style.borderColor='',2000);
+    }
+  });
+}
+// Dynamic article count
+function countArticles(){
+  const heroCards = document.querySelectorAll('.article-hero-card').length;
+  const sideCards = document.querySelectorAll('.article-side-card').length;
+  const articleRows = document.querySelectorAll('.article-row').length;
+  const total = heroCards + sideCards + articleRows;
+  const countEl = document.getElementById('article-count');
+  if(countEl) countEl.textContent = total;
+}
+countArticles();
+
+// Dynamic reader count simulation (increases over time)
+function animateReaderCount(){
+  const readerEl = document.getElementById('reader-count');
+  if(!readerEl) return;
+  let count = 25000;
+  setInterval(()=>{
+    count += Math.floor(Math.random() * 3);
+    readerEl.textContent = count.toLocaleString() + '+';
+  }, 5000);
+}
+animateReaderCount();
+</script>
+</body>
+</html>

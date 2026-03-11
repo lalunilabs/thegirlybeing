@@ -1,0 +1,48 @@
+{
+  "name": "girly-being-blog",
+  "version": "2.0.0",
+  "description": "A modern, chic personal growth blog where psychology meets softness",
+  "main": "index-enhanced.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'Build complete - files are ready for deployment'",
+    "backup": "node -e \"require('./backup-system.js')\"",
+    "deploy": "echo 'Deploy to your hosting service'"
+  },
+  "keywords": [
+    "blog",
+    "personal-growth",
+    "psychology",
+    "feminine",
+    "modern",
+    "daisyui",
+    "tailwind"
+  ],
+  "author": "Girly Being",
+  "license": "MIT",
+  "dependencies": {
+    "daisyui": "^4.4.19",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/girly-being-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/girly-being-blog/issues"
+  },
+  "homepage": "https://girlybeing.com",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

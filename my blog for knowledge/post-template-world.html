@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - Girly Being</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="https://girlybeing.com/{{SLUG}}">
+    <meta property="og:image" content="https://girlybeing.com/og-{{SLUG}}.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="https://girlybeing.com/twitter-{{SLUG}}.jpg">
+    
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://girlybeing.com/{{SLUG}}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-world.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{TITLE}}",
+        "description": "{{DESCRIPTION}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE}}",
+        "author": {
+            "@type": "Organization",
+            "name": "Girly Being"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Girly Being",
+            "url": "https://girlybeing.com/"
+        }
+    }
+    </script>
+</head>
+<body class="article-page-world">
+    <!-- Navigation -->
+    <header class="nav-world" role="banner">
+        <nav class="nav-container-world" role="navigation">
+            <div class="nav-brand-world">
+                <a href="index-world.html" aria-label="Girly Being Home">
+                    <div class="logo-world">GB</div>
+                    <div class="logo-text-world">Girly Being</div>
+                </a>
+            </div>
+            
+            <div class="search-nav-world">
+                <div class="search-container-world">
+                    <input 
+                        type="search" 
+                        class="search-input-world" 
+                        placeholder="Search articles..."
+                        aria-label="Search"
+                    >
+                    <button class="search-btn-world" aria-label="Submit search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-links-world">
+                <a href="index-world.html#home" class="nav-link-world">Home</a>
+                <a href="index-world.html#articles" class="nav-link-world active">Articles</a>
+                <a href="index-world.html#pillars" class="nav-link-world">Pillars</a>
+                <a href="index-world.html#programs" class="nav-link-world">Programs</a>
+                <a href="premium.html" class="nav-cta-world">Join Inner Circle</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <article class="article-container-world">
+            <header class="article-header-world">
+                <p class="article-category-world">{{CATEGORY}}</p>
+                <h1 class="article-title-world-page">{{TITLE}}</h1>
+                <div class="article-meta-world-page">
+                    <time datetime="{{DATE}}">{{FORMATTED_DATE}}</time>
+                    <span>•</span>
+                    <span>{{READ_TIME}}</span>
+                    {{PREMIUM_BADGE}}
+                </div>
+            </header>
+
+            <div class="article-body-world">
+                {{CONTENT}}
+                
+                <!-- My POV Section -->
+                <section class="my-pov-section" style="margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, #FAF0EE 0%, #F5E6E0 100%); border-radius: 16px; border-left: 4px solid #D4A5A5;">
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #2D2D2D; margin-bottom: 1rem;">
+                        <i class="fas fa-heart" style="color: #D4A5A5; margin-right: 0.5rem;"></i>
+                        My POV
+                    </h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(45, 45, 45, 0.9); font-style: italic;">
+                        {{MY_POV_CONTENT}}
+                    </p>
+                </section>
+            </div>
+
+            <footer class="article-footer-world" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 165, 0.2);">
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <button class="btn-world btn-secondary-world" onclick="bookmarkArticle('{{BOOKMARK_KEY}}')">
+                        <i class="fas fa-bookmark"></i>
+                        Save Article
+                    </button>
+                    <button class="btn-world btn-secondary-world" onclick="shareArticle()">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2D2D2D;">Topics:</h4>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        {{TAGS}}
+                    </div>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Related Articles -->
+        <section class="section-world" style="background: #FAF8F5;" aria-labelledby="related-heading">
+            <div class="container-world">
+                <h2 id="related-heading" class="section-title-world" style="text-align: center; margin-bottom: 2rem;">Related Articles</h2>
+                <div class="articles-grid-world">
+                    {{RELATED_ARTICLES}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="newsletter-section-world">
+            <div class="container-world">
+                <div class="newsletter-content-world">
+                    <h2>Enjoyed this article?</h2>
+                    <p>Get more insights like this delivered to your inbox every week.</p>
+                    <form class="newsletter-form-world" id="article-newsletter-form">
+                        <input 
+                            type="email" 
+                            class="email-input-world" 
+                            placeholder="Enter your email..."
+                            required
+                            aria-label="Email"
+                        >
+                        <button type="submit" class="btn-world btn-primary-world">
+                            <i class="fas fa-envelope"></i>
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-world" role="contentinfo">
+        <div class="footer-content-world">
+            <div class="footer-brand-world">
+                <h3>Girly Being</h3>
+                <p class="footer-tagline-world">Where psychology meets feminine wisdom</p>
+                <div class="footer-social-world">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column-world">
+                <h4>Explore</h4>
+                <ul class="footer-links-world">
+                    <li><a href="index-world.html#articles">Articles</a></li>
+                    <li><a href="index-world.html#pillars">Six Pillars</a></li>
+                    <li><a href="index-world.html#programs">Programs</a></li>
+                    <li><a href="#">Journal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column-world">
+                <h4>Community</h4>
+                <ul class="footer-links-world">
+                    <li><a href="premium.html">Inner Circle</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column-world">
+                <h4>Legal</h4>
+                <ul class="footer-links-world">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-world">
+            <p>&copy; 2026 Girly Being. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script-world.js"></script>
+</body>
+</html>

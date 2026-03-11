@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - Girly Being</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    
+    <!-- Open Graph & Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="https://girlybeing.com/{{SLUG}}">
+    <meta property="og:image" content="https://girlybeing.com/og-{{SLUG}}.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="https://girlybeing.com/twitter-{{SLUG}}.jpg">
+    
+    <!-- Favicon & Brand -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://girlybeing.com/{{SLUG}}">
+    
+    <!-- Ultimate Stylesheets -->
+    <link rel="stylesheet" href="styles-ultimate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Fraunces:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{TITLE}}",
+        "description": "{{DESCRIPTION}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE}}",
+        "author": {
+            "@type": "Organization",
+            "name": "Girly Being"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Girly Being",
+            "url": "https://girlybeing.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://girlybeing.com/favicon.svg"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://girlybeing.com/{{SLUG}}"
+        },
+        "url": "https://girlybeing.com/{{SLUG}}",
+        "inLanguage": "en"
+    }
+    </script>
+</head>
+<body>
+    <!-- Pinkish Floating Elements -->
+    <div class="floating-elements-ultimate">
+        <div class="floating-element-ultimate"></div>
+        <div class="floating-element-ultimate"></div>
+        <div class="floating-element-ultimate"></div>
+        <div class="floating-element-ultimate"></div>
+        <div class="floating-element-ultimate"></div>
+    </div>
+
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Ultimate Navigation -->
+    <header class="nav-ultimate" role="banner">
+        <nav class="nav-container-ultimate" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand-ultimate">
+                <a href="index-ultimate.html" class="logo-link-ultimate" aria-label="Girly Being Home">
+                    <div class="logo-ultimate">GB</div>
+                    <div class="logo-text-ultimate">Girly Being</div>
+                </a>
+            </div>
+            
+            <!-- Advanced Search Navigation Bar -->
+            <div class="search-nav-ultimate">
+                <div class="search-container-ultimate">
+                    <input 
+                        type="search" 
+                        class="search-input-ultimate" 
+                        placeholder="Search articles, topics, or insights..."
+                        aria-label="Search"
+                    >
+                    <button class="search-btn-ultimate" aria-label="Submit search">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-links-ultimate">
+                <a href="index-ultimate.html#home" class="nav-link-ultimate">Home</a>
+                <a href="index-ultimate.html#content" class="nav-link-ultimate">Content</a>
+                <a href="index-ultimate.html#pillars" class="nav-link-ultimate">Pillars</a>
+                <a href="index-ultimate.html#programs" class="nav-link-ultimate">Programs</a>
+                <a href="index-ultimate.html#journal" class="nav-link-ultimate">Journal</a>
+                <a href="premium.html#pricing" class="btn-ultimate btn-primary-ultimate">
+                    <i class="fas fa-crown"></i>
+                    Join Inner Circle
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Article Container -->
+        <article class="article-ultimate">
+            <!-- Article Header -->
+            <header class="article-header-ultimate">
+                <div class="article-meta-ultimate">
+                    <span class="category-ultimate">{{CATEGORY}}</span>
+                    <time class="article-date-ultimate" datetime="{{DATE}}">{{FORMATTED_DATE}}</time>
+                    <span class="read-time-ultimate">{{READ_TIME}}</span>
+                    {{PREMIUM_BADGE}}
+                </div>
+                <h1 class="article-title-ultimate">{{TITLE}}</h1>
+                <p class="article-subtitle-ultimate">{{SUBTITLE}}</p>
+            </header>
+
+            <!-- Article Content -->
+            <div class="article-content-ultimate">
+                {{CONTENT}}
+            </div>
+
+            <!-- Article Footer -->
+            <footer class="article-footer-ultimate">
+                <div class="article-actions-ultimate">
+                    <button class="btn-ultimate btn-secondary-ultimate bookmark-btn-ultimate" data-bookmark="{{BOOKMARK_KEY}}">
+                        <i class="fas fa-bookmark"></i>
+                        Save Article
+                    </button>
+                    <button class="btn-ultimate btn-secondary-ultimate share-btn-ultimate">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                </div>
+                
+                <div class="article-tags-ultimate">
+                    <h4>Topics:</h4>
+                    {{TAGS}}
+                </div>
+                
+                <div class="article-navigation-ultimate">
+                    {{PREV_NEXT_NAVIGATION}}
+                </div>
+            </footer>
+        </article>
+
+        <!-- Related Content -->
+        <section class="related-content-ultimate" aria-labelledby="related-heading">
+            <h2 id="related-heading" class="section-title-ultimate">Related Articles</h2>
+            <div class="related-grid-ultimate">
+                {{RELATED_ARTICLES}}
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="newsletter-cta-ultimate">
+            <div class="newsletter-content-ultimate">
+                <h3>Enjoy this article?</h3>
+                <p>Get more insights like this delivered to your inbox every week.</p>
+                <form class="newsletter-form-ultimate" id="article-newsletter-form">
+                    <input 
+                        type="email" 
+                        placeholder="your@email.com" 
+                        required 
+                        class="email-input-ultimate"
+                    >
+                    <button type="submit" class="btn-ultimate btn-primary-ultimate">
+                        <i class="fas fa-envelope"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Ultimate Footer -->
+    <footer class="footer-ultimate" role="contentinfo">
+        <div class="footer-content-ultimate">
+            <div class="footer-brand-ultimate">
+                <h3>Girly Being</h3>
+                <p class="footer-tagline-ultimate">Where feminine power meets psychology</p>
+                <div class="footer-social-ultimate">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column-ultimate">
+                <h4>Explore</h4>
+                <ul class="footer-links-ultimate">
+                    <li><a href="index-ultimate.html#content">Latest Content</a></li>
+                    <li><a href="index-ultimate.html#pillars">Six Pillars</a></li>
+                    <li><a href="index-ultimate.html#programs">Programs</a></li>
+                    <li><a href="index-ultimate.html#journal">Journal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column-ultimate">
+                <h4>Community</h4>
+                <ul class="footer-links-ultimate">
+                    <li><a href="#inner-circle">Inner Circle</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column-ultimate">
+                <h4>Support</h4>
+                <ul class="footer-links-ultimate">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#privacy">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-ultimate">
+            <p>&copy; 2026 Girly Being. All rights reserved. | 
+                <a href="#terms">Terms</a> | 
+                <a href="#privacy">Privacy</a> | 
+                <a href="#cookies">Cookies</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Ultimate Scripts -->
+    <script src="script-ultimate.js"></script>
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>

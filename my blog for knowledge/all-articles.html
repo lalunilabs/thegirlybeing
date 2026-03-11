@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Articles — Girly Being</title>
+<meta name="description" content="All articles on womanhood, psychology, cycles, and the joy of being a woman. Browse our complete collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Quicksand:wght@500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --bg:#FFF5F8;--paper:#FFFCF8;--pink:#F5C8D4;--rose:#C96480;
+  --blush:#FAE4EC;--lilac:#E0D0F0;--mint:#C8E8D8;--butter:#F8EAC0;
+  --peach:#F8D4BC;--lav:#C8B4E0;--sage:#A8C8B4;
+  --plum:#5A2E4A;--deep:#2E1422;--muted:#9A7882;--light:#C4A8B4;
+  --border:rgba(90,46,74,.08);--grad:linear-gradient(135deg,#E8849A,#C96480);
+  --gcheck:rgba(245,200,210,.13);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--deep);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--gcheck) 1px,transparent 1px),linear-gradient(90deg,var(--gcheck) 1px,transparent 1px);background-size:36px 36px;opacity:.5}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:16px 60px;background:rgba(253,246,241,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .3s}
+nav.scrolled{padding:11px 60px;box-shadow:0 2px 20px rgba(90,46,74,.05)}
+.logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--plum);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo em{font-style:italic;font-weight:400;color:var(--rose)}
+.logo-flower{font-size:.8rem;color:var(--rose);animation:spin 16s linear infinite;display:inline-block}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--rose)}
+.nav-cta{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;text-decoration:none;color:var(--plum);border:1.5px solid rgba(90,46,74,.18);padding:9px 22px;border-radius:40px;transition:background .2s,border-color .2s}
+.nav-cta:hover{background:var(--blush);border-color:var(--rose)}
+
+/* PAGE HEADER - wider */
+.page-header{
+  position:relative;z-index:1;
+  padding:130px 80px 60px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:40px;
+  max-width:1400px;
+  margin:0 auto;
+}
+.ph-eyebrow{font-family:'Caveat',cursive;font-size:1.1rem;color:var(--rose);font-weight:600;margin-bottom:12px}
+.ph-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5vw,4.8rem);font-weight:900;line-height:1.06;color:var(--deep)}
+.ph-h1 em{font-style:italic;color:var(--rose);font-weight:400}
+.ph-sub{font-size:.95rem;line-height:1.82;color:var(--muted);font-weight:300;max-width:380px;margin-top:16px}
+.ph-search{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.search-wrap{display:flex;align-items:center;gap:0;background:var(--paper);border:1.5px solid rgba(201,100,128,.2);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;width:280px}
+.search-wrap:focus-within{border-color:var(--rose);box-shadow:0 0 0 3px rgba(201,100,128,.08)}
+.search-input{flex:1;padding:13px 16px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--deep);outline:none}
+.search-input::placeholder{color:var(--light)}
+.search-btn{padding:13px 16px;background:none;border:none;cursor:pointer;font-size:1rem;color:var(--muted);transition:color .2s}
+.search-btn:hover{color:var(--rose)}
+.ph-count{font-family:'Quicksand',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light)}
+
+/* CATEGORY FILTERS - wider */
+.filters{
+  position:relative;z-index:1;
+  padding:0 80px 40px;
+  display:flex;gap:10px;flex-wrap:wrap;
+  max-width:1400px;
+  margin:0 auto;
+}
+.filter-btn{
+  font-family:'Quicksand',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  padding:10px 22px;border-radius:40px;border:1.5px solid var(--border);
+  background:var(--paper);color:var(--muted);cursor:pointer;
+  transition:all .22s cubic-bezier(.34,1.56,.64,1);
+}
+.filter-btn:hover{border-color:rgba(201,100,128,.3);color:var(--rose);transform:translateY(-2px)}
+.filter-btn.active{background:var(--plum);border-color:var(--plum);color:#fff;box-shadow:0 4px 14px rgba(90,46,74,.2)}
+.filter-btn.active:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(90,46,74,.25)}
+
+/* MAIN LAYOUT - wider content area */
+.content-wrap{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 320px;
+  gap:50px;
+  padding:0 80px 100px;
+  align-items:start;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+/* FEATURED ARTICLE */
+.featured-article{
+  background:var(--paper);border-radius:6px;
+  overflow:hidden;border:1px solid rgba(201,100,128,.1);
+  box-shadow:2px 4px 20px rgba(90,46,74,.07);
+  text-decoration:none;color:var(--deep);
+  display:flex;gap:0;
+  margin-bottom:24px;
+  transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .32s;
+  position:relative;
+}
+.featured-article::before{content:'';position:absolute;top:-8px;left:36px;width:50px;height:18px;background:rgba(249,220,180,.75);border-radius:3px;z-index:2}
+.featured-article:hover{transform:translateY(-5px);box-shadow:4px 12px 40px rgba(90,46,74,.11)}
+.fa-img{
+  width:380px;flex-shrink:0;
+  background:linear-gradient(140deg,var(--pink),var(--blush),var(--peach));
+  display:flex;align-items:center;justify-content:center;font-size:5rem;
+  position:relative;
+}
+.fa-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(255,255,255,.3))}
+.fa-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:center;flex:1}
+.a-cat{font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.a-cat::before{content:'';width:18px;height:1.5px;background:var(--rose);display:inline-block}
+.fa-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1.18;color:var(--deep);margin-bottom:12px}
+.fa-excerpt{font-size:1rem;line-height:1.9;color:var(--muted);font-weight:300;margin-bottom:20px}
+.a-meta{display:flex;align-items:center;gap:14px;font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light)}
+.a-read{display:inline-flex;align-items:center;gap:6px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:.76rem;color:var(--rose);margin-top:16px;transition:gap .2s}
+.a-read::after{content:'→';transition:transform .2s}
+.featured-article:hover .a-read::after,.article-card:hover .a-read::after{transform:translateX(5px)}
+
+/* ARTICLE GRID */
+.articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.article-card{
+  background:var(--paper);border-radius:6px;
+  border:1px solid rgba(201,100,128,.1);
+  box-shadow:1px 3px 12px rgba(90,46,74,.06);
+  text-decoration:none;color:var(--deep);
+  overflow:hidden;
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.article-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:6px 6px 0 0}
+.ac-t1::after{background:var(--pink)}.ac-t2::after{background:var(--mint)}.ac-t3::after{background:var(--lilac)}.ac-t4::after{background:var(--butter)}.ac-t5::after{background:var(--peach)}.ac-t6::after{background:var(--lav)}
+.article-card:hover{transform:translateY(-5px) rotate(-.3deg);box-shadow:3px 10px 30px rgba(90,46,74,.1)}
+.ac-body{padding:24px 22px 20px;flex:1;display:flex;flex-direction:column}
+.ac-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.28;color:var(--deep);margin-bottom:10px}
+.ac-excerpt{font-size:.95rem;line-height:1.85;color:var(--muted);font-weight:300;flex:1;margin-bottom:14px}
+.ac-footer{display:flex;justify-content:space-between;align-items:center}
+.ac-meta{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light)}
+
+/* INLINE NEWSLETTER */
+.inline-nl{
+  background:linear-gradient(128deg,var(--plum) 0%,#7A3062 100%);
+  border-radius:6px;padding:32px 30px;
+  display:flex;align-items:center;gap:28px;
+  margin-bottom:24px;
+  position:relative;overflow:hidden;
+  box-shadow:2px 6px 24px rgba(90,46,74,.18);
+}
+.inline-nl::before{content:'✿';position:absolute;font-size:12rem;right:-30px;top:-30px;color:rgba(255,255,255,.05);pointer-events:none;line-height:1;animation:spin 50s linear infinite}
+.inl-left{flex:1;position:relative;z-index:1}
+.inl-tag{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,180,200,.8);margin-bottom:8px}
+.inl-h{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:6px}
+.inl-h em{font-style:italic;font-weight:400;color:var(--pink)}
+.inl-p{font-size:.82rem;color:rgba(255,255,255,.6);font-weight:300;line-height:1.6}
+.inl-right{flex-shrink:0;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;min-width:230px}
+.inl-input{padding:12px 16px;border-radius:9px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:.86rem;outline:none}
+.inl-input::placeholder{color:rgba(255,255,255,.38)}
+.inl-input:focus{border-color:rgba(255,255,255,.44);background:rgba(255,255,255,.15)}
+.inl-btn{padding:12px;border-radius:9px;border:none;background:#fff;color:var(--plum);font-family:'Quicksand',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;transition:transform .22s,box-shadow .22s}
+.inl-btn:hover{transform:scale(1.03);box-shadow:0 4px 14px rgba(0,0,0,.12)}
+
+/* INLINE BOOK */
+.inline-book{
+  background:var(--paper);border-radius:6px;
+  border:1px solid rgba(201,100,128,.12);
+  box-shadow:2px 4px 14px rgba(90,46,74,.07);
+  padding:24px 26px;
+  display:flex;gap:20px;align-items:center;
+  margin-bottom:24px;
+  position:relative;
+  text-decoration:none;color:var(--deep);
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;
+}
+.inline-book::before{content:'';position:absolute;top:-7px;left:28px;width:44px;height:14px;background:rgba(249,220,180,.7);border-radius:3px}
+.inline-book:hover{transform:translateY(-4px);box-shadow:3px 10px 28px rgba(90,46,74,.1)}
+.ib-label{position:absolute;top:14px;right:16px;font-family:'Quicksand',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);background:var(--blush);padding:3px 8px;border-radius:20px}
+.ib-cover{width:64px;height:88px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,var(--lilac),var(--lav));box-shadow:2px 4px 12px rgba(90,46,74,.14)}
+.ib-tag{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+.ib-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--deep);margin-bottom:4px}
+.ib-author{font-size:.8rem;color:var(--muted);font-weight:300;margin-bottom:8px}
+.ib-why{font-size:.81rem;line-height:1.65;color:var(--muted);font-weight:300}
+.ib-cta{display:inline-flex;align-items:center;gap:6px;font-family:'Quicksand',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.5px;color:var(--rose);margin-top:10px}
+.ib-cta::after{content:'→'}
+
+/* ARTICLES LIST */
+.articles-list{display:flex;flex-direction:column;gap:1px;margin-bottom:24px}
+.article-row{display:flex;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--deep);transition:padding-left .22s}
+.article-row:first-child{border-top:1px solid var(--border)}
+.article-row:hover{padding-left:10px}
+.ar-num{font-family:'Caveat',cursive;font-size:1.9rem;font-weight:700;color:var(--pink);min-width:38px;line-height:1;transition:color .2s}
+.article-row:hover .ar-num{color:var(--rose)}
+.ar-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ar-body{flex:1}
+.ar-title{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:700;color:var(--deep);margin-bottom:4px;line-height:1.3}
+.ar-excerpt{font-size:.92rem;line-height:1.75;color:var(--muted);font-weight:300}
+.ar-meta{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light);white-space:nowrap;text-align:right;flex-shrink:0}
+.ar-arrow{font-size:1rem;color:var(--pink);flex-shrink:0;transition:transform .2s,color .2s}
+.article-row:hover .ar-arrow{transform:translateX(5px);color:var(--rose)}
+
+/* INLINE CIRCLE TEASER */
+.inline-circle{
+  border-radius:6px;padding:28px 28px;
+  border:2px dashed rgba(90,46,74,.15);
+  background:var(--blush);
+  display:flex;align-items:center;gap:20px;
+  margin-bottom:24px;
+  position:relative;
+}
+.inline-circle::before{content:'';position:absolute;top:-8px;left:24px;width:48px;height:15px;background:rgba(249,220,180,.75);border-radius:3px}
+.ic-em{font-size:2.4rem;flex-shrink:0}
+.ic-body{flex:1}
+.ic-tag{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+.ic-h{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--plum);margin-bottom:6px}
+.ic-p{font-size:.83rem;line-height:1.65;color:var(--muted);font-weight:300}
+.ic-btn{flex-shrink:0;font-family:'Quicksand',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.4px;text-decoration:none;color:#fff;background:var(--plum);padding:12px 22px;border-radius:10px;transition:transform .22s,box-shadow .22s;white-space:nowrap;box-shadow:0 4px 14px rgba(90,46,74,.2)}
+.ic-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(90,46,74,.28)}
+
+/* LOAD MORE */
+.load-more{display:flex;justify-content:center;padding:20px 0 10px}
+.lm-btn{font-family:'Quicksand',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--rose);border:1.5px solid rgba(201,100,128,.3);background:var(--paper);padding:14px 36px;border-radius:40px;cursor:pointer;transition:background .2s,border-color .2s,transform .22s}
+.lm-btn:hover{background:var(--blush);border-color:var(--rose);transform:translateY(-2px)}
+
+/* SIDEBAR */
+.sidebar{
+  display:flex;flex-direction:column;gap:20px;
+  position:sticky;top:90px;
+}
+
+/* Sidebar author */
+.sb-author{
+  background:var(--paper);border-radius:6px;
+  border:1px solid rgba(201,100,128,.1);
+  box-shadow:2px 4px 16px rgba(90,46,74,.07);
+  padding:28px 24px;text-align:center;
+  position:relative;
+}
+.sb-author::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:50px;height:16px;background:rgba(249,220,180,.7);border-radius:3px}
+.sa-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--blush));margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 4px 14px rgba(201,100,128,.2)}
+.sa-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--deep);margin-bottom:4px}
+.sa-handle{font-family:'Quicksand',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);margin-bottom:12px;opacity:.8}
+.sa-bio{font-size:.83rem;line-height:1.7;color:var(--muted);font-weight:300;margin-bottom:18px}
+.sa-links{display:flex;gap:8px;justify-content:center}
+.sa-link{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;border:1px solid var(--border);background:var(--bg);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.sa-link:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(90,46,74,.1)}
+
+/* Popular */
+.sb-popular{
+  background:var(--paper);border-radius:6px;
+  border:1px solid rgba(201,100,128,.1);
+  box-shadow:2px 4px 16px rgba(90,46,74,.07);
+  padding:24px;
+}
+.sb-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;font-style:italic;color:var(--plum);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.sb-title::before{content:'✦';font-style:normal;font-size:.7rem;color:var(--rose)}
+.pop-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--deep);transition:padding-left .2s}
+.pop-item:last-child{border-bottom:none}
+.pop-item:hover{padding-left:6px}
+.pi-num{font-family:'Caveat',cursive;font-size:1.6rem;font-weight:700;color:var(--pink);line-height:1;flex-shrink:0;width:28px;transition:color .2s}
+.pop-item:hover .pi-num{color:var(--rose)}
+.pi-title{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:700;color:var(--deep);line-height:1.35;margin-bottom:3px}
+.pi-meta{font-family:'Quicksand',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light)}
+
+/* Sidebar newsletter */
+.sb-nl{
+  background:linear-gradient(135deg,var(--plum),#7A3062);
+  border-radius:6px;padding:26px 22px;
+  position:relative;overflow:hidden;
+  box-shadow:2px 4px 18px rgba(90,46,74,.2);
+}
+.sb-nl::after{content:'✿';position:absolute;font-size:10rem;right:-30px;bottom:-30px;color:rgba(255,255,255,.06);line-height:1;pointer-events:none;animation:spin 40s linear infinite}
+.sn-tag{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,180,200,.8);margin-bottom:10px;position:relative;z-index:1}
+.sn-h{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;line-height:1.25;margin-bottom:8px;position:relative;z-index:1}
+.sn-h em{font-style:italic;font-weight:400;color:var(--pink)}
+.sn-p{font-size:.8rem;color:rgba(255,255,255,.58);font-weight:300;line-height:1.6;margin-bottom:16px;position:relative;z-index:1}
+.sn-input{width:100%;padding:11px 14px;border-radius:8px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;margin-bottom:8px;position:relative;z-index:1}
+.sn-input::placeholder{color:rgba(255,255,255,.35)}
+.sn-btn{width:100%;padding:12px;border-radius:8px;border:none;background:#fff;color:var(--plum);font-family:'Quicksand',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;z-index:1}
+.sn-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+
+/* Sidebar book */
+.sb-book{
+  background:var(--paper);border-radius:6px;
+  border:1px solid rgba(201,100,128,.12);
+  box-shadow:2px 4px 14px rgba(90,46,74,.06);
+  padding:22px 20px;
+  text-decoration:none;color:var(--deep);
+  position:relative;
+  transition:transform .25s,box-shadow .25s;
+  display:block;
+}
+.sb-book::before{content:'';position:absolute;top:-7px;left:20px;width:42px;height:13px;background:rgba(249,220,180,.7);border-radius:3px}
+.sb-book:hover{transform:translateY(-3px);box-shadow:3px 8px 24px rgba(90,46,74,.1)}
+.sbb-label{font-family:'Quicksand',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);background:var(--blush);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.sbb-cover{width:100%;height:110px;border-radius:6px;background:linear-gradient(135deg,var(--mint),var(--sage));display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin-bottom:14px;box-shadow:2px 3px 10px rgba(90,46,74,.1)}
+.sbb-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--deep);margin-bottom:3px}
+.sbb-author{font-size:.78rem;color:var(--muted);font-weight:300;margin-bottom:8px}
+.sbb-why{font-size:.79rem;line-height:1.62;color:var(--muted);font-weight:300;margin-bottom:12px}
+.sbb-cta{display:flex;align-items:center;gap:6px;font-family:'Quicksand',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.5px;color:var(--rose)}
+.sbb-cta::after{content:'→'}
+
+/* Sidebar Inner Circle */
+.sb-circle{
+  background:var(--blush);border-radius:6px;
+  border:1.5px dashed rgba(90,46,74,.15);
+  padding:22px 20px;text-align:center;
+  position:relative;
+}
+.sb-circle::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:44px;height:14px;background:rgba(249,220,180,.7);border-radius:3px}
+.sc-em{font-size:2rem;display:block;margin-bottom:10px}
+.sc-tag{font-family:'Quicksand',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+.sc-h{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--plum);line-height:1.3;margin-bottom:6px}
+.sc-p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;font-weight:300}
+.sc-price{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--plum);margin-bottom:12px}
+.sc-price span{font-size:.75rem;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--muted)}
+.sc-btn{display:block;font-family:'Quicksand',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.4px;text-decoration:none;color:#fff;background:var(--plum);padding:12px;border-radius:9px;box-shadow:0 4px 14px rgba(90,46,74,.2);transition:transform .22s,box-shadow .22s}
+.sc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(90,46,74,.28)}
+.sc-micro{font-family:'Caveat',cursive;font-size:.9rem;color:var(--light);margin-top:8px;display:block}
+
+/* Bottom capture - wider */
+.bottom-capture{
+  position:relative;z-index:1;
+  margin:0 80px 80px;
+  max-width:1240px;
+  background:linear-gradient(128deg,var(--plum) 0%,#7A3062 100%);
+  border-radius:6px;padding:60px 72px;
+  display:flex;justify-content:space-between;align-items:center;gap:48px;
+  overflow:hidden;box-shadow:4px 8px 40px rgba(90,46,74,.2);
+}
+.bottom-capture::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.bottom-capture::after{content:'✿';position:absolute;font-size:18rem;right:-50px;bottom:-50px;color:rgba(255,255,255,.05);line-height:1;animation:spin 50s linear infinite;pointer-events:none}
+.bc-left{position:relative;z-index:1}
+.bc-tag{font-family:'Quicksand',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(245,180,200,.8);margin-bottom:12px}
+.bc-h{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:10px}
+.bc-h em{font-style:italic;font-weight:400;color:var(--pink)}
+.bc-p{font-size:.9rem;line-height:1.75;color:rgba(255,255,255,.6);font-weight:300}
+.bc-right{position:relative;z-index:1;flex-shrink:0;display:flex;flex-direction:column;gap:10px;min-width:280px}
+.bc-input{padding:15px 18px;border-radius:10px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none}
+.bc-input::placeholder{color:rgba(255,255,255,.38)}
+.bc-input:focus{border-color:rgba(255,255,255,.44);background:rgba(255,255,255,.16)}
+.bc-btn{padding:15px;border-radius:10px;border:none;background:#fff;color:var(--plum);font-family:'Quicksand',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.bc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.bc-note{font-size:.72rem;color:rgba(255,255,255,.35);text-align:center}
+
+/* Footer - wider */
+footer{position:relative;z-index:1;padding:38px 80px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.fl{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--plum)}
+.fl em{font-style:italic;font-weight:400;color:var(--rose)}
+.fs{font-size:.72rem;color:var(--light);margin-top:3px;font-weight:300}
+.flinks{display:flex;gap:22px}
+.flinks a{font-family:'Quicksand',sans-serif;font-size:.69rem;font-weight:600;text-decoration:none;color:var(--muted);transition:color .2s}
+.flinks a:hover{color:var(--rose)}
+.f-social{display:flex;gap:8px}
+.fsoc{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;border:1px solid var(--border);background:var(--paper);text-decoration:none;transition:transform .2s}
+.fsoc:hover{transform:translateY(-2px)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* QUOTE BOX - beautiful styled boxes */
+.quote-box{
+  margin:32px 0;
+  padding:28px 32px;
+  background:linear-gradient(135deg,var(--blush) 0%,var(--paper) 100%);
+  border-left:4px solid var(--rose);
+  border-radius:0 12px 12px 0;
+  position:relative;
+  box-shadow:2px 4px 20px rgba(90,46,74,.08);
+}
+.quote-box::before{
+  content:'"';
+  position:absolute;
+  top:12px;
+  left:16px;
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;
+  color:var(--rose);
+  opacity:.25;
+  line-height:1;
+}
+.quote-box p{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;
+  font-weight:700;
+  line-height:1.6;
+  color:var(--deep);
+  font-style:italic;
+  margin-bottom:12px;
+  position:relative;
+  z-index:1;
+  padding-left:8px;
+}
+.quote-box cite{
+  display:block;
+  font-family:'Quicksand',sans-serif;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:16px;
+  font-style:normal;
+  padding-left:8px;
+}
+.quote-box cite::before{content:'— ';color:var(--rose)}
+
+/* Pull quote - centered, larger */
+.pull-quote{
+  text-align:center;
+  border-left:none;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:transparent;
+  padding:32px 40px;
+  margin:36px 0;
+}
+.pull-quote::before{
+  position:static;
+  display:block;
+  margin-bottom:8px;
+  font-size:2.5rem;
+  opacity:.3;
+}
+.pull-quote cite{text-align:center}
+
+/* TEXT HIGHLIGHTS */
+mark,.highlight{
+  background:linear-gradient(180deg,transparent 60%,var(--pink) 60%);
+  padding:0 4px;
+  color:var(--deep);
+  font-weight:500;
+}
+.highlight-rose{background:linear-gradient(180deg,transparent 60%,var(--rose) 60%);color:#fff}
+.highlight-mint{background:linear-gradient(180deg,transparent 60%,var(--mint) 60%)}
+.highlight-butter{background:linear-gradient(180deg,transparent 60%,var(--butter) 60%)}
+
+/* Selection color */
+::selection{background:var(--pink);color:var(--plum)}
+
+/* MICRO LABELS / TAGS */
+.micro-tag{
+  font-family:'Quicksand',sans-serif;
+  font-size:.6rem;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--rose);
+  background:var(--blush);
+  padding:4px 10px;
+  border-radius:20px;
+  display:inline-block;
+}
+
+/* LINK UNDERLINE ANIMATION */
+.link-underline{
+  text-decoration:none;
+  color:var(--rose);
+  position:relative;
+  font-weight:500;
+}
+.link-underline::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:0;
+  height:1.5px;
+  background:var(--rose);
+  transition:width .3s ease;
+}
+.link-underline:hover::after{width:100%}
+
+/* FOCUS STYLES */
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--rose);
+  outline-offset:2px;
+}
+
+/* DROP CAP for article intros */
+.drop-cap::first-letter{
+  font-family:'Playfair Display',serif;
+  font-size:3.2rem;
+  float:left;
+  line-height:.8;
+  padding-right:12px;
+  padding-top:4px;
+  color:var(--rose);
+  font-weight:700;
+}
+
+/* EMPHASIS TEXT */
+.em-rose{color:var(--rose);font-weight:500}
+.em-plum{color:var(--plum);font-weight:500}
+.em-muted{color:var(--muted);font-style:italic}
+
+/* SMALL CAPS for meta info */
+.small-caps{
+  font-family:'Quicksand',sans-serif;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--light);
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* Filter hide/show */
+.article-card.hidden,.article-row.hidden,.featured-article.hidden{display:none}
+
+/* Responsive */
+@media(max-width:1024px){
+.content-wrap{grid-template-columns:1fr}
+.sidebar{position:static;display:none}
+.featured-article{flex-direction:column}
+.fa-img{width:100%;height:200px}
+.articles-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+nav{padding:16px 20px}
+.page-header{padding:110px 20px 40px;flex-direction:column;align-items:flex-start}
+.ph-search{width:100%}
+.search-wrap{width:100%}
+.filters{padding:0 20px 30px}
+.content-wrap{padding:0 20px 60px}
+.bottom-capture{margin:0 20px 60px;padding:40px 30px;flex-direction:column;text-align:center}
+.bc-right{width:100%}
+footer{padding:30px 20px;flex-direction:column;text-align:center;gap:20px}
+}
+</style>
+</head>
+<nav id="nav">
+  <a href="index.html" class="logo"><span class="logo-flower">✿</span> Girly <em>&nbsp;Being</em></a>
+  <ul class="nav-links">
+    <li><a href="all-articles.html" class="active">Articles</a></li>
+    <li><a href="index.html#topics">Topics</a></li>
+    <li><a href="index.html#newsletter">Newsletter</a></li>
+    <li><a href="index.html#circle">Inner Circle</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Subscribe Free</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-left">
+    <p class="ph-eyebrow">✦ All Articles</p>
+    <h1 class="ph-h1">Everything<br>written <em>for you.</em></h1>
+    <p class="ph-sub">13 articles on womanhood, psychology, cycles, and the joy of being a woman. All free. Start anywhere.</p>
+  </div>
+  <div class="ph-search">
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Search articles..." id="searchInput">
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <span class="ph-count">13 articles · updated weekly</span>
+  </div>
+</div>
+
+<!-- CATEGORY FILTERS -->
+<div class="filters">
+  <button class="filter-btn active" data-cat="all">✦ All</button>
+  <button class="filter-btn" data-cat="mind">🧠 Mind Mechanics</button>
+  <button class="filter-btn" data-cat="becoming">🌱 The Becoming</button>
+  <button class="filter-btn" data-cat="energy">✨ Energy Shift</button>
+  <button class="filter-btn" data-cat="shadow">🌗 Shadow & Light</button>
+  <button class="filter-btn" data-cat="purpose">🎯 The Big Why</button>
+  <button class="filter-btn" data-cat="grounded">💫 Grounded & Present</button>
+</div>
+
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="content-wrap">
+
+  <!-- ARTICLES COLUMN -->
+  <div class="articles-col">
+
+    <!-- FEATURED -->
+    <a href="post-the-art-of-seeing-without-drowning.html" class="featured-article reveal" data-cat="mind">
+      <div class="fa-img">🌙</div>
+      <div class="fa-body">
+        <span class="a-cat">Mind Mechanics</span>
+        <h2 class="fa-title">The Art of Seeing Without Drowning</h2>
+        <p class="fa-excerpt">You can feel everything deeply AND see clearly. Learn the art of emotional detachment without abandoning your feelings.</p>
+        <div class="a-meta"><span>15 min read</span><span>·</span><span>⭐ Most Read</span><span>·</span><span>Free</span></div>
+        <span class="a-read">Read the article</span>
+      </div>
+    </a>
+
+    <!-- GRID ROW 1 -->
+    <div class="articles-grid">
+      <a href="post-when-silence-becomes-violence.html" class="article-card ac-t2 reveal d1" data-cat="becoming">
+        <div class="ac-body">
+          <span class="a-cat">The Becoming</span>
+          <h3 class="ac-title">When Silence Becomes Violence</h3>
+          <p class="ac-excerpt">Your silence is literally making you sick. Learn how self-silencing destroys your health.</p>
+          <div class="ac-footer"><span class="ac-meta">18 min · Free</span><span class="a-read" style="font-size:.7rem">Read →</span></div>
+        </div>
+      </a>
+      <a href="post-show-up-for-yourself.html" class="article-card ac-t3 reveal d2" data-cat="becoming">
+        <div class="ac-body">
+          <span class="a-cat">The Becoming</span>
+          <h3 class="ac-title">Girl, Show Up for Yourself</h3>
+          <p class="ac-excerpt">Showing up for yourself is built in tiny daily choices — through the hard and the healing.</p>
+          <div class="ac-footer"><span class="ac-meta">7 min · Free</span><span class="a-read" style="font-size:.7rem">Read →</span></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- INLINE NEWSLETTER -->
+    <div class="inline-nl reveal" id="newsletter">
+      <div class="inl-left">
+        <p class="inl-tag">✦ It's a Girl Thing — Free Bi-Weekly Newsletter</p>
+        <h3 class="inl-h">Get the next article<br><em>in your inbox.</em></h3>
+        <p class="inl-p">25,000+ women get it every 2 weeks. No spam, ever.</p>
+      </div>
+      <div class="inl-right">
+        <input class="inl-input" type="email" placeholder="your@email.com">
+        <button class="inl-btn" type="button">Subscribe — it's free ✿</button>
+      </div>
+    </div>
+
+    <!-- GRID ROW 2 -->
+    <div class="articles-grid">
+      <a href="post-shadow-power.html" class="article-card ac-t1 reveal d1" data-cat="shadow">
+        <div class="ac-body">
+          <span class="a-cat">Shadow & Light</span>
+          <h3 class="ac-title">The Parts of You That You Hide Hold Your Power</h3>
+          <p class="ac-excerpt">What if the things you're most ashamed of are actually your greatest sources of strength?</p>
+          <div class="ac-footer"><span class="ac-meta">9 min · Free</span><span class="a-read" style="font-size:.7rem">Read →</span></div>
+        </div>
+      </a>
+      <a href="post-manifestation-real.html" class="article-card ac-t4 reveal d2" data-cat="energy">
+        <div class="ac-body">
+          <span class="a-cat">Energy Shift</span>
+          <h3 class="ac-title">Manifestation Is Real. But Not How You Think.</h3>
+          <p class="ac-excerpt">The science behind the woo-woo, and how to actually make it work in your real life.</p>
+          <div class="ac-footer"><span class="ac-meta">10 min · Free</span><span class="a-read" style="font-size:.7rem">Read →</span></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ARTICLES LIST -->
+    <div class="articles-list">
+      <a href="post-building-yourself.html" class="article-row reveal" data-cat="becoming">
+        <span class="ar-num">01</span>
+        <div class="ar-dot" style="background:var(--pink)"></div>
+        <div class="ar-body"><div class="ar-title">You're Not Finding Yourself. You're Building Yourself.</div><div class="ar-excerpt">Self-discovery isn't about uncovering something lost. It's about consciously creating who you're becoming.</div></div>
+        <div class="ar-meta">The Becoming · 8 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-body-knows.html" class="article-row reveal d1" data-cat="grounded">
+        <span class="ar-num">02</span>
+        <div class="ar-dot" style="background:var(--mint)"></div>
+        <div class="ar-body"><div class="ar-title">Your Body Knows Before Your Mind Does</div><div class="ar-excerpt">The somatic signals you've been ignoring are actually your inner guidance system trying to get your attention.</div></div>
+        <div class="ar-meta">Grounded & Present · 9 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-big-why.html" class="article-row reveal d2" data-cat="purpose">
+        <span class="ar-num">03</span>
+        <div class="ar-dot" style="background:var(--butter)"></div>
+        <div class="ar-body"><div class="ar-title">Purpose Without Pressure</div><div class="ar-excerpt">A grounded way to find direction that doesn't turn your life into a performance.</div></div>
+        <div class="ar-meta">The Big Why · 7 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-motivation-lie.html" class="article-row reveal d1" data-cat="mind">
+        <span class="ar-num">04</span>
+        <div class="ar-dot" style="background:var(--lilac)"></div>
+        <div class="ar-body"><div class="ar-title">Motivation Is a Lie. Build This Instead.</div><div class="ar-excerpt">Why waiting for motivation is keeping you small, and what to build instead that actually works.</div></div>
+        <div class="ar-meta">Mind Mechanics · 8 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-waiting-for-happiness.html" class="article-row reveal d2" data-cat="mind">
+        <span class="ar-num">05</span>
+        <div class="ar-dot" style="background:var(--peach)"></div>
+        <div class="ar-body"><div class="ar-title">Waiting for Happiness? Stop Chasing It and Start Practicing It</div><div class="ar-excerpt">If you keep thinking you'll be happy "when…", you're postponing your life.</div></div>
+        <div class="ar-meta">Mind Mechanics · 9 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-boundaries-arent-where-we-fight.html" class="article-row reveal d1" data-cat="becoming">
+        <span class="ar-num">06</span>
+        <div class="ar-dot" style="background:var(--pink)"></div>
+        <div class="ar-body"><div class="ar-title">Boundaries Aren't Where We Fight Constantly</div><div class="ar-excerpt">Boundaries aren't battlefields. They're living guidelines that protect your integrity without isolating you.</div></div>
+        <div class="ar-meta">The Becoming · 8 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-mind-mechanics.html" class="article-row reveal d2" data-cat="mind">
+        <span class="ar-num">07</span>
+        <div class="ar-dot" style="background:var(--lilac)"></div>
+        <div class="ar-body"><div class="ar-title">Your Mind Isn't Broken—It's Running Old Software</div><div class="ar-excerpt">The subconscious patterns keeping you stuck aren't flaws. They're outdated programs waiting for an upgrade.</div></div>
+        <div class="ar-meta">Mind Mechanics · 8 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+      <a href="post-what-do-you-bring-to-the-table.html" class="article-row reveal d1" data-cat="becoming">
+        <span class="ar-num">08</span>
+        <div class="ar-dot" style="background:var(--mint)"></div>
+        <div class="ar-body"><div class="ar-title">What Do You Bring to the Table?</div><div class="ar-excerpt">Stop proving your worth. Start knowing it — and build a life so full you're not begging for a seat at anyone's table.</div></div>
+        <div class="ar-meta">The Becoming · 12 min</div>
+        <span class="ar-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- INNER CIRCLE TEASER -->
+    <div class="inline-circle reveal" id="circle">
+      <span class="ic-em">📚</span>
+      <div class="ic-body">
+        <p class="ic-tag">✦ Inner Circle — Always for you</p>
+        <h3 class="ic-h">What world-class women are reading right now.</h3>
+        <p class="ic-p">Monthly book picks, curated intel, and a deeper weekly newsletter — for the woman who wants the edge.</p>
+      </div>
+      <a href="index.html#circle" class="ic-btn">Join the Inner Circle</a>
+    </div>
+
+    <!-- LOAD MORE -->
+    <div class="load-more">
+      <button class="lm-btn" type="button">Load more articles ✦</button>
+    </div>
+
+  </div><!-- end articles-col -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Author bio -->
+    <div class="sb-author reveal">
+      <div class="sa-avatar">✿</div>
+      <div class="sa-name">Girly Being</div>
+      <div class="sa-handle">A love letter to womanhood</div>
+      <p class="sa-bio">Writing about womanhood — body, cycles, hormones, and the joy of being deeply, curiously, unapologetically female.</p>
+      <div class="sa-links">
+        <a href="#" class="sa-link" title="Instagram"><i class="fab fa-instagram" style="color:var(--rose)"></i></a>
+        <a href="#" class="sa-link" title="Pinterest"><i class="fab fa-pinterest" style="color:var(--rose)"></i></a>
+      </div>
+    </div>
+
+    <!-- Most popular -->
+    <div class="sb-popular reveal d1">
+      <div class="sb-title">Most Read</div>
+      <a href="post-the-art-of-seeing-without-drowning.html" class="pop-item"><span class="pi-num">1</span><div><div class="pi-title">The Art of Seeing Without Drowning</div><div class="pi-meta">Mind Mechanics · 15 min</div></div></a>
+      <a href="post-when-silence-becomes-violence.html" class="pop-item"><span class="pi-num">2</span><div><div class="pi-title">When Silence Becomes Violence</div><div class="pi-meta">The Becoming · 18 min</div></div></a>
+      <a href="post-shadow-power.html" class="pop-item"><span class="pi-num">3</span><div><div class="pi-title">The Parts of You That You Hide Hold Your Power</div><div class="pi-meta">Shadow & Light · 9 min</div></div></a>
+      <a href="post-show-up-for-yourself.html" class="pop-item"><span class="pi-num">4</span><div><div class="pi-title">Girl, Show Up for Yourself</div><div class="pi-meta">The Becoming · 7 min</div></div></a>
+    </div>
+
+    <!-- Sidebar newsletter -->
+    <div class="sb-nl reveal d2">
+      <p class="sn-tag">✦ It's a Girl Thing</p>
+      <h3 class="sn-h">Get the next article<br><em>in your inbox.</em></h3>
+      <p class="sn-p">Bi-weekly. Free. No spam, ever.</p>
+      <input class="sn-input" type="email" placeholder="your@email.com">
+      <button class="sn-btn" type="button">Subscribe ✿</button>
+    </div>
+
+    <!-- Sidebar Inner Circle -->
+    <div class="sb-circle reveal d1">
+      <span class="sc-em">✦</span>
+      <p class="sc-tag">Inner Circle</p>
+      <h3 class="sc-h">The curated layer for women going deeper.</h3>
+      <p class="sc-p">Monthly book picks, curated intel on extraordinary women, deeper newsletter.</p>
+      <a href="index.html#circle" class="sc-btn">Join the Inner Circle</a>
+      <span class="sc-micro">always for you ✿</span>
+    </div>
+
+  </aside>
+</div>
+
+<!-- BOTTOM EMAIL CAPTURE -->
+<div class="bottom-capture reveal">
+  <div class="bc-left">
+    <p class="bc-tag">✦ Don't miss the next one</p>
+    <h2 class="bc-h">Get every article<br><em>before anyone else.</em></h2>
+    <p class="bc-p">Bi-weekly. Free. No spam, ever.</p>
+  </div>
+  <div class="bc-right">
+    <input class="bc-input" type="email" placeholder="your@email.com">
+    <button class="bc-btn" type="button">Subscribe — it's free ✿</button>
+    <span class="bc-note">No spam. Unsubscribe any time.</span>
+  </div>
+</div>
+
+<footer>
+  <div><div class="fl">Girly <em>Being</em></div><p class="fs">A love letter to womanhood.</p></div>
+  <div class="flinks">
+    <a href="index.html">Home</a>
+    <a href="all-articles.html">Articles</a>
+    <a href="index.html#newsletter">Newsletter</a>
+    <a href="index.html#circle">Inner Circle</a>
+  </div>
+  <div class="f-social">
+    <a href="#" class="fsoc"><i class="fab fa-instagram" style="color:var(--rose)"></i></a>
+    <a href="#" class="fsoc"><i class="fab fa-pinterest" style="color:var(--rose)"></i></a>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+
+// Reveal
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Category filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat=btn.dataset.cat;
+    document.querySelectorAll('[data-cat]').forEach(el=>{
+      if(cat==='all'||el.dataset.cat===cat){el.classList.remove('hidden')}
+      else{el.classList.add('hidden')}
+    });
+  });
+});
+
+// Search
+document.getElementById('searchInput').addEventListener('input',function(){
+  const q=this.value.toLowerCase().trim();
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    const txt=(el.querySelector('.fa-title,.ac-title,.ar-title,.ib-title')?.textContent||el.textContent).toLowerCase();
+    if(!q||txt.includes(q)){el.classList.remove('hidden')}
+    else{el.classList.add('hidden')}
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girly Being - Modern Dreamy Blog for Personal Growth</title>
+    <meta name="description" content="Girly Being is a modern, chic personal growth blog where psychology meets softness: mindset, habits, nervous system, and identity-level change — with practical frameworks you can actually use.">
+    <meta property="og:site_name" content="Girly Being">
+    <meta property="og:title" content="Girly Being - Modern Dreamy Blog for Personal Growth">
+    <meta property="og:description" content="A modern, chic personal growth blog where psychology meets softness: mindset, habits, nervous system, and identity-level change — with practical frameworks you can actually use.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Girly Being - Modern Dreamy Blog for Personal Growth">
+    <meta name="twitter:description" content="A modern, chic personal growth blog where psychology meets softness: mindset, habits, nervous system, and identity-level change — with practical frameworks you can actually use.">
+    <meta property="og:url" content="https://girlybeing.com/">
+    <link rel="canonical" href="https://girlybeing.com/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    
+    <!-- Enhanced Styles -->
+    <link rel="stylesheet" href="styles-enhanced.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Fraunces:wght@400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Girly Being",
+            "url": "https://girlybeing.com/",
+            "description": "Girly Being is a modern, chic personal growth blog where psychology meets softness: mindset, habits, nervous system, and identity-level change — with practical frameworks you can actually use.",
+            "inLanguage": "en"
+        }
+    </script>
+</head>
+<body class="home">
+    <!-- Enhanced Navigation -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <a href="#home" class="logo-text">Girly Being</a>
+                </div>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#content" class="nav-link">Content</a></li>
+                    <li><a href="#pillars" class="nav-link">Pillars</a></li>
+                    <li><a href="#journal" class="nav-link">Journal</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#content">Content</a></li>
+                        <li><a href="#pillars">Pillars</a></li>
+                        <li><a href="#journal">Journal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Girly Being</h1>
+            <p class="hero-subtitle">Where psychology meets softness. Modern personal growth for the dreamy, determined woman who wants to build a life that feels like magic.</p>
+            <div class="hero-actions">
+                <a href="#content" class="btn btn-primary">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Explore Content
+                </a>
+                <a href="#newsletter" class="btn btn-outline">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    Join Newsletter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section -->
+    <section id="latest" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                    Latest Posts
+                </h2>
+                <p class="text-xl text-gray-600">New every Sunday — written to be used, not just read.</p>
+            </div>
+            
+            <div class="latest-posts-feed" id="latest-posts-container">
+                <!-- Posts will be dynamically loaded here -->
+                <div class="loading placeholder-card">
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="loading h-full w-full"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="loading h-4 w-3/4 mb-2"></div>
+                            <div class="loading h-3 w-full mb-2"></div>
+                            <div class="loading h-3 w-2/3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid Section -->
+    <section id="content" class="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                    Explore Our Content
+                </h2>
+                <p class="text-xl text-gray-600">Dive deep into mindset, habits, and identity transformation.</p>
+            </div>
+            
+            <div class="content-grid" id="content-grid">
+                <!-- Content cards will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                    Our Pillars
+                </h2>
+                <p class="text-xl text-gray-600">The foundations of transformative growth.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card card-compact bg-gradient-to-br from-pink-100 to-purple-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-pink-600">Mind Mechanics</h3>
+                        <p class="text-gray-700">Understanding your mental patterns and rewiring your thoughts for success.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-compact bg-gradient-to-br from-purple-100 to-blue-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-purple-600">Daily Architecture</h3>
+                        <p class="text-gray-700">Building systems and habits that support your highest self.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-secondary btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-compact bg-gradient-to-br from-blue-100 to-green-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-blue-600">Energy Shift</h3>
+                        <p class="text-gray-700">Transforming your vibration and manifesting your dreams.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-accent btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-compact bg-gradient-to-br from-green-100 to-yellow-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-green-600">Shadow & Light</h3>
+                        <p class="text-gray-700">Embracing all parts of yourself for wholeness integration.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-success btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-compact bg-gradient-to-br from-yellow-100 to-orange-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-yellow-600">The Becoming</h3>
+                        <p class="text-gray-700">The journey of self-discovery and identity evolution.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-warning btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-compact bg-gradient-to-br from-orange-100 to-red-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-orange-600">The Big Why</h3>
+                        <p class="text-gray-700">Finding purpose and meaning in your unique journey.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-error btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-20">
+        <div class="newsletter">
+            <h3>Join It's a Girl Thing</h3>
+            <p class="text-lg text-gray-600 mb-6">Monthly letters about navigating life with both heart and wisdom.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <div class="form-control">
+                    <input type="email" placeholder="your@email.com" class="input input-bordered" required />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Girly Being</h3>
+                    <p class="text-gray-600">Written to be used, not just read.</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="btn btn-ghost btn-circle">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="btn btn-ghost btn-circle">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="btn btn-ghost btn-circle">
+                            <i data-lucide="pinterest" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <a href="#home">Home</a>
+                        <a href="#content">Latest Posts</a>
+                        <a href="#pillars">Pillars</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#newsletter">Newsletter</a>
+                        <a href="#journal">Journal</a>
+                        <a href="#">About</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center text-gray-500">
+                <p>&copy; 2026 Girly Being. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast toast-top toast-end" id="toast">
+        <div class="alert alert-success">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <span id="toast-message">Success!</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Enhanced functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Newsletter form submission
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                showToast('Successfully subscribed to the newsletter!');
+                this.reset();
+            });
+            
+            // Load posts dynamically
+            loadLatestPosts();
+            loadContentGrid();
+        });
+        
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+        
+        async function loadLatestPosts() {
+            try {
+                const response = await fetch('posts.json');
+                const posts = await response.json();
+                
+                const container = document.getElementById('latest-posts-container');
+                const latestPosts = posts.filter(post => post.homepageLatest).slice(0, 3);
+                
+                container.innerHTML = latestPosts.map(post => `
+                    <div class="card card-compact bg-base-100 shadow-xl">
+                        <div class="card-image bg-gradient-to-br from-pink-400 to-purple-400">
+                            <div class="text-4xl">🌸</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="badge badge-primary">${post.category}</div>
+                            <h3 class="card-title">${post.title}</h3>
+                            <p class="text-sm text-gray-600">${post.excerpt}</p>
+                            <div class="card-actions justify-between">
+                                <div class="text-xs text-gray-500">
+                                    <i data-lucide="clock" class="w-3 h-3 inline"></i>
+                                    ${post.readTime}
+                                </div>
+                                <a href="${post.slug}" class="btn btn-primary btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Reinitialize icons
+                lucide.createIcons();
+            } catch (error) {
+                console.error('Error loading posts:', error);
+            }
+        }
+        
+        async function loadContentGrid() {
+            try {
+                const response = await fetch('posts.json');
+                const posts = await response.json();
+                
+                const container = document.getElementById('content-grid');
+                const featuredPosts = posts.filter(post => post.homepageFeatured).slice(0, 6);
+                
+                container.innerHTML = featuredPosts.map(post => `
+                    <div class="content-card">
+                        <div class="card-image bg-gradient-to-br ${getRandomGradient()}">
+                            <div class="text-5xl">${getRandomEmoji()}</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="category">${post.category}</span>
+                                <span class="read-time">
+                                    <i data-lucide="clock" class="w-3 h-3"></i>
+                                    ${post.readTime}
+                                </span>
+                            </div>
+                            <h3 class="card-title">${post.title}</h3>
+                            <p class="card-excerpt">${post.excerpt}</p>
+                            <div class="card-actions">
+                                <a href="${post.slug}" class="btn btn-outline btn-sm">Read More</a>
+                                <button class="btn btn-ghost btn-sm" onclick="savePost('${post.bookmark}')">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Reinitialize icons
+                lucide.createIcons();
+            } catch (error) {
+                console.error('Error loading content grid:', error);
+            }
+        }
+        
+        function getRandomGradient() {
+            const gradients = [
+                'from-pink-400 to-purple-400',
+                'from-purple-400 to-blue-400',
+                'from-blue-400 to-green-400',
+                'from-green-400 to-yellow-400',
+                'from-yellow-400 to-orange-400',
+                'from-orange-400 to-red-400'
+            ];
+            return gradients[Math.floor(Math.random() * gradients.length)];
+        }
+        
+        function getRandomEmoji() {
+            const emojis = ['🌸', '💫', '✨', '🌙', '⭐', '🦋', '🌺', '💖', '🎨', '🌈'];
+            return emojis[Math.floor(Math.random() * emojis.length)];
+        }
+        
+        function savePost(bookmark) {
+            // Save post to localStorage
+            let bookmarks = JSON.parse(localStorage.getItem('girlybeing_bookmarks_v1') || '[]');
+            if (!bookmarks.includes(bookmark)) {
+                bookmarks.push(bookmark);
+                localStorage.setItem('girlybeing_bookmarks_v1', JSON.stringify(bookmarks));
+                showToast('Post saved to bookmarks!');
+            } else {
+                showToast('Post already bookmarked!');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} - Girly Being</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="https://girlybeing.com/{{SLUG}}">
+    <meta property="og:image" content="https://girlybeing.com/og-{{SLUG}}.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="https://girlybeing.com/twitter-{{SLUG}}.jpg">
+    
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://girlybeing.com/{{SLUG}}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Quicksand:wght@500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+    :root{--bg:#FDF6F1;--paper:#FFFCF8;--pink:#F5C8D4;--rose:#C96480;--rose2:#E8849A;--blush:#FAE4EC;--lilac:#E0D0F0;--mint:#C8E8D8;--butter:#F8EAC0;--peach:#F8D4BC;--plum:#5A2E4A;--deep:#2E1422;--muted:#9A7882;--light:#C4A8B4;--border:rgba(90,46,74,.08);--grad:linear-gradient(135deg,#E8849A,#C96480)}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--deep);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    
+    /* Navigation - SAME AS HOMEPAGE */
+    nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:16px 60px;background:rgba(253,246,241,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .3s}
+    nav.scrolled{padding:11px 60px;box-shadow:0 2px 20px rgba(90,46,74,.05)}
+    .logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--plum);text-decoration:none;display:flex;align-items:center;gap:8px}
+    .logo em{font-style:italic;font-weight:400;color:var(--rose)}
+    .logo-flower{font-size:.8rem;color:var(--rose);animation:spin 16s linear infinite;display:inline-block}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--rose)}
+    .nav-cta{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.5px;text-decoration:none;color:var(--plum);border:1.5px solid rgba(90,46,74,.18);padding:9px 22px;border-radius:40px;transition:background .2s,border-color .2s}
+    .nav-cta:hover{background:var(--blush);border-color:var(--rose)}
+    
+    /* Article Styles */
+    .article-page{padding-top:100px;max-width:800px;margin:0 auto;padding:120px 40px 80px}
+    .article-header{text-align:center;margin-bottom:60px}
+    .article-category{font-family:'Quicksand',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:16px}
+    .article-date{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+    .article-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;color:var(--deep);margin-bottom:20px}
+    .article-subtitle{font-size:1.1rem;line-height:1.7;color:var(--muted);max-width:600px;margin:0 auto 30px}
+    .article-content{font-size:1.05rem;line-height:1.9;color:var(--deep)}
+    .article-content p{margin-bottom:24px}
+    .article-content h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--deep);margin:48px 0 24px;padding-bottom:12px;border-bottom:2px solid var(--blush)}
+    .article-content h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--deep);margin:36px 0 18px}
+    
+    /* Drop cap */
+    .article-content>p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:var(--rose);float:left;line-height:1;margin-right:12px;margin-top:-8px}
+    
+    /* My POV Section */
+    .my-pov{margin-top:60px;padding:40px;background:linear-gradient(135deg,var(--blush) 0%,var(--paper) 100%);border-radius:8px;border-left:4px solid var(--rose)}
+    .my-pov-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--deep);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+    .my-pov-title i{color:var(--rose)}
+    .my-pov-text{font-style:italic;line-height:1.8;color:var(--muted)}
+    
+    /* Footer */
+    footer{position:relative;z-index:1;padding:40px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-top:80px}
+    .fl{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--plum)}
+    .fl em{font-style:italic;font-weight:400;color:var(--rose)}
+    .fs{font-size:.72rem;color:var(--light);margin-top:3px;font-weight:300}
+    .flinks{display:flex;gap:22px}
+    .flinks a{font-family:'Quicksand',sans-serif;font-size:.69rem;font-weight:600;letter-spacing:.5px;text-decoration:none;color:var(--muted);transition:color .2s}
+    .flinks a:hover{color:var(--rose)}
+    .f-social{display:flex;gap:10px}
+    .fsoc-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;border:1px solid var(--border);background:var(--paper);text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .fsoc-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(90,46,74,.1)}
+    
+    @keyframes spin{to{transform:rotate(360deg)}}
+    
+    @media(max-width:768px){
+    nav{padding:16px 20px}
+    .nav-links{display:none}
+    .article-page{padding:100px 20px 60px}
+    footer{padding:30px 20px;flex-direction:column;text-align:center}
+    }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{TITLE}}",
+        "description": "{{DESCRIPTION}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE}}",
+        "author": {
+            "@type": "Organization",
+            "name": "Girly Being"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Girly Being",
+            "url": "https://girlybeing.com/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+<!-- Navigation - SAME AS HOMEPAGE -->
+<nav id="nav">
+  <a href="index.html" class="logo"><span class="logo-flower">✿</span> Girly <em>&nbsp;Being</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html#articles">Read</a></li>
+    <li><a href="index.html#topics">Topics</a></li>
+    <li><a href="index.html#newsletter">Newsletter</a></li>
+    <li><a href="index.html#circle">Inner Circle</a></li>
+  </ul>
+  <a href="index.html#newsletter" class="nav-cta">Subscribe Free</a>
+</nav>
+
+<main class="article-page">
+    <article>
+        <header class="article-header">
+            <p class="article-category">{{CATEGORY}}</p>
+            <p class="article-date">{{DATE}} · {{READ_TIME}}</p>
+            <h1 class="article-title">{{TITLE}}</h1>
+            <p class="article-subtitle">{{SUBTITLE}}</p>
+        </header>
+        
+        <div class="article-content">
+            {{CONTENT}}
+            
+            <!-- My POV Section -->
+            <section class="my-pov">
+                <h2 class="my-pov-title">
+                    <i class="fas fa-heart"></i>
+                    My POV
+                </h2>
+                <p class="my-pov-text">{{MY_POV_CONTENT}}</p>
+            </section>
+        </div>
+    </article>
+</main>
+
+<footer>
+  <div><div class="fl">Girly <em>Being</em></div><p class="fs">A love letter to womanhood.</p></div>
+  <div class="flinks">
+    <a href="index.html#articles">Read</a>
+    <a href="index.html#topics">Topics</a>
+    <a href="index.html#newsletter">Newsletter</a>
+    <a href="index.html#circle">Inner Circle</a>
+  </div>
+  <div class="f-social">
+    <a href="#" class="fsoc-btn" title="Instagram"><i class="fab fa-instagram" style="color:var(--rose)"></i></a>
+    <a href="#" class="fsoc-btn" title="Pinterest"><i class="fab fa-pinterest" style="color:var(--rose)"></i></a>
+  </div>
+</footer>
+
+<script>
+// Navigation scroll effect
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+</script>
+
+</body>
+</html>
