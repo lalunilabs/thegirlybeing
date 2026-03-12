@@ -421,23 +421,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const secs=document.querySelectorAll('section[id],div[id]'),nls=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)c=s.id});nls.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+c)a.classList.add('active')})},{passive:true});
 
-// Newsletter form
-const nlBtn=document.querySelector('.nl-btn');
-const nlInput=document.querySelector('.nl-input');
-if(nlBtn&&nlInput){
-  nlBtn.addEventListener('click',function(){
-    const email=nlInput.value.trim();
-    if(email&&email.includes('@')){
-      this.textContent='Subscribed! ✿';
-      this.style.background='linear-gradient(135deg,#27AE60,#2ECC71)';
-      nlInput.value='';
-      setTimeout(()=>{this.textContent='Subscribe — it\'s free ✿';this.style.background=''},3000);
-    }else{
-      nlInput.style.borderColor='#E74C3C';
-      setTimeout(()=>nlInput.style.borderColor='',2000);
-    }
-  });
-}
+// Newsletter form - now handled by beehiiv-newsletter.js
+// (integrated with Beehiiv for subscriber tracking)
+
 // Dynamic article count
 function countArticles(){
   const heroCards = document.querySelectorAll('.article-hero-card').length;
@@ -461,5 +447,9 @@ function animateReaderCount(){
 }
 animateReaderCount();
 </script>
+
+<!-- Beehiiv Newsletter Integration -->
+<script src="beehiiv-newsletter.js"></script>
+<script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
