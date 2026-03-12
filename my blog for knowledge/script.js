@@ -1491,14 +1491,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Redirect to Beehiiv with email pre-filled
-      const email = emailInput.value.trim();
-      const beehiivUrl = `https://itsagirlthing.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`;
-      window.open(beehiivUrl, '_blank');
-      
-      statusEl.textContent = 'Opening subscription page... ✿';
-      statusEl.style.color = '#27AE60';
-      if (emailInput) emailInput.value = '';
+      // Handled by beehiiv-newsletter.js - this prevents duplicate handling
+      // The beehiiv-newsletter.js will submit to Beehiiv without redirect
+      statusEl.textContent = 'Click Subscribe to join ✿';
     });
   });
 
