@@ -1491,7 +1491,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      statusEl.textContent = 'Thanks! It’s a Girl Thing is launching soon. For now, email hello@girlybeing.com and we’ll add you manually.';
+      // Redirect to Beehiiv with email pre-filled
+      const email = emailInput.value.trim();
+      const beehiivUrl = `https://itsagirlthing.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`;
+      window.open(beehiivUrl, '_blank');
+      
+      statusEl.textContent = 'Opening subscription page... ✿';
+      statusEl.style.color = '#27AE60';
       if (emailInput) emailInput.value = '';
     });
   });
