@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF5F8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FAE4EC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  <text x="600" y="280" font-family="serif" font-size="80" font-weight="900" fill="#5A2E4A" text-anchor="middle">Girly Being</text>
+  <text x="600" y="380" font-family="sans-serif" font-size="32" fill="#9A7882" text-anchor="middle">A Love Letter to Womanhood</text>
+  <text x="600" y="450" font-family="sans-serif" font-size="24" fill="#C96480" text-anchor="middle">✿ Personal Growth &amp; Psychology for Ambitious Women ✿</text>
+</svg>
