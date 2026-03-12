@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://girlybeing.com/sitemap.xml
+Sitemap: https://lalunilabs.github.io/thegirlybeing/sitemap.xml
