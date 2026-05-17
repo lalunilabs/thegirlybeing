@@ -1,0 +1,8 @@
+[build]
+  base = "my blog for knowledge"
+  publish = "my blog for knowledge"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
