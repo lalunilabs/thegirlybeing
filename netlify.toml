@@ -1,0 +1,3 @@
+[build]
+  publish = "my blog for knowledge"
+  command = "echo 'No build needed'"
